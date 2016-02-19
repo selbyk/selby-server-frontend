@@ -1,6 +1,7 @@
 /* globals io */
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
+import ENV from 'selby-logs/config/environment';
 import io from 'npm:socket.io-client';
 //import feathers from 'npm:feathers-client/lib/client';
 //import socketio from 'npm:feathers-socketio/client';
@@ -9,21 +10,21 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   session: Ember.inject.service('session'),
 
   setupController(controller) {
-    controller.set('logs',[]);
-    var socket = io('ws://selby.io:5644');
+    controller.set('logs', []);
+    var socket = io('ws://' + ENV.apiUrl);
 
-      console.log('opened socket connection');
+    console.log('opened socket connection');
 
-      socket.on('log', function(log) {
-        console.log('Got a new Todo!', log);
-        controller.get('logs').unshiftObject(log);
-      });
+    socket.on('log', function(log) {
+      console.log('Got a new Todo!', log);
+      controller.get('logs').unshiftObject(log);
+    });
 
-      socket.on('ping', function(ping) {
-        console.log('ping', ping);
-        //console.log('socket', socket);
-        socket.io.emitAll('pong', ping);
-      });
+    socket.on('ping', function(ping) {
+      console.log('ping', ping);
+      //console.log('socket', socket);
+      socket.io.emitAll('pong', ping);
+    });
 
 
     controller.set('socket', socket);

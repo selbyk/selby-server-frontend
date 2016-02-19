@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    apiUrl: 'selby.io:5644',
     modulePrefix: 'selby-logs',
     environment: environment,
     baseURL: '/',
@@ -28,6 +29,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.apiUrl = 'localhost:5644';
   }
 
   if (environment === 'test') {
@@ -47,7 +49,9 @@ module.exports = function(environment) {
   }
 
   ENV['ember-simple-auth'] = {
-    authenticationRoute: 'login'
+    authenticationRoute: 'login',
+    routeAfterAuthentication: 'server',
+    routeIfAlreadyAuthenticated: 'server'
   };
 
   return ENV;

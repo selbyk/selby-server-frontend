@@ -1,2 +1,26 @@
 @import 'materialize';
 @import 'ember-cli-materialize';
+.radial-background {
+    fill: #FFFFFF;
+    fill-opacity: 0.01;
+}
+
+.radial-component {
+    fill: #e1e1e1;
+}
+
+.radial-component .radial-label {
+    font-family: Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+    fill: #0000FF;
+}
+
+.radial-arc {
+    stroke-weight:0.1;
+    fill: #f0a417;
+}
+
+.radial-arc2 {
+    stroke-weight:0.1;
+    fill: #b00d08;
+}

@@ -1,0 +1,30 @@
+  <h4>System</h4>
+  <div class="row">
+    <ul class="collection with-header">
+      <li href="#" class="collection-header">
+        <h6>Info</h6>
+      </li>
+      <li href="#" class="collection-item">
+        <strong>Type:</strong> {{stats.type}}</li>
+      <li href="#" class="collection-item">
+        <strong>Arch:</strong> {{stats.arch}}</li>
+      <li href="#" class="collection-item">
+        <strong>Platform:</strong> {{stats.platform}}</li>
+      <li href="#" class="collection-item">
+        <strong>Release:</strong> {{stats.release}}</li>
+      <li href="#" class="collection-item">
+        <strong>Total Memory:</strong> {{stats.totalmem}}</li>
+      <li href="#" class="collection-item">
+        <strong>Free Memory:</strong> {{stats.freemem}}</li>
+      <li href="#" class="collection-item">
+        <strong>Uptime:</strong> {{stats.uptime}}</li>
+      </ul>
+  </div>
+    <div>
+      <h3>CPU Usage</h3>
+      {{radial-progress value=stats.loadpercent}}
+    </div>
+    <div>
+      <h3>Memory Usage</h3>
+      {{radial-progress value=stats.mempercent}}
+    </div>

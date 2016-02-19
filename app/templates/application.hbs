@@ -19,7 +19,9 @@
 </div>
 
 {{#if session.isAuthenticated}}
-  <i class="large material-icons" style="width: 32vw; text-align: center;">assessment</i>
+  {{#link-to 'server'}}
+    <i class="large material-icons" style="width: 32vw; text-align: center;">assessment</i>
+  {{/link-to}}
   {{#link-to 'index'}}
     <i class="large material-icons" style="width: 32vw; text-align: center;">view_headline</i>
   {{/link-to}}
