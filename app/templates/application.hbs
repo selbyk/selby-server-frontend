@@ -1,3 +1,36 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper light-green lighten-4 blue-text text-darken-5">
+      <a href="#!" class="brand-logo blue-text text-darken-5">Logs</a>
+      <ul class="right hide-on-med-and-down">
+        <li class=" blue-text text-darken-5">
+          {{#link-to 'index' tagName='li' }}
+            {{link-to 'Navbar' 'index'}}
+          {{/link-to}}
+        </li>
+        <li class="blue-text text-darken-5">
+          {{#link-to 'index' tagName='li' class="blue-text text-darken-5" }}
+            {{link-to 'Tabs' 'index'}}
+          {{/link-to}}
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+{{#if session.isAuthenticated}}
+  <i class="large material-icons" style="width: 32vw; text-align: center;">assessment</i>
+  {{#link-to 'index'}}
+    <i class="large material-icons" style="width: 32vw; text-align: center;">view_headline</i>
+  {{/link-to}}
+  <a {{action 'invalidateSession'}}><i class="large material-icons" style="width: 32vw; text-align: center;">input</i></a>
+{{else}}
+  <i class="large material-icons" style="width: 32vw; text-align: center;">assessment</i>
+  <i class="large material-icons" style="width: 32vw; text-align: center;">view_headline</i>
+  <i class="large material-icons" style="width: 32vw; text-align: center;">input</i>
+{{/if}}
 
 {{outlet}}
+
+{{!-- ember-cli-materialize modal container --}}
+{{md-modal-container}}

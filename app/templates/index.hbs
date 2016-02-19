@@ -1,0 +1,21 @@
+
+<p class="center-align flow-text">
+  Try checking out the API docs or spec for more log activity.
+</p>
+
+<h4>Log Stream</h4>
+
+{{md-pagination class="center-align" min=1 max=12 current=1 range=5}}
+
+{{#each log in logs}}
+  {{#md-card title=log.type class=log.type}}
+      {{#md-card-content}}
+          {{log.message}}
+      {{/md-card-content}}
+      {{#md-card-action class='right-align'}}
+          {{#link-to 'index'}}{{log.time}}{{/link-to}}
+      {{/md-card-action}}
+  {{/md-card}}
+{{/each}}
+
+{{md-pagination class="center-align" min=1 max=12 current=1 range=5}}

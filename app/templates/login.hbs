@@ -1,0 +1,13 @@
+<h4>Login</h4>
+<div class="row">
+  {{md-input value=identification label='Username' class="col s12" validate=true}}
+  {{md-input value=password label='Password' type="password" class="col s12" validate=true}}
+</div>
+<div class="row">
+  {{md-btn-submit icon='mdi-content-send'
+      iconPosition='right'
+      action='authenticate'
+      text='Submit'}}
+</div>
+
+<p class="flow-text">Hint: Try admin/admin</p>
